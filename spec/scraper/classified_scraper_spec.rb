@@ -10,6 +10,7 @@ describe Cantonese::Scraper::ClassifiedScraper do
       classified.each do |word|
         expect(word[:radical_id]).to_not be_nil
         expect(word[:text]).to_not be_nil
+        expect(word[:text].length).to eq(1)
         expect(word[:type]).to_not be_nil
       end
     end

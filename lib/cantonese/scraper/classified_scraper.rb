@@ -18,10 +18,10 @@ module Cantonese
       def process(html)
         doc  = Nokogiri::HTML(html, nil, 'UTF-8')
         doc.search("//table//tr[position()>1]").collect do |row|
-          radical_id = row.xpath(".//td[position()=1]//text()").text.gsub(%r|[\[\]]|, "").to_i
-          types = {1 => :'單讀音字', 2 => :'破音字', 3 => :'異讀字', 4 => :'異讀破音字'}
+          radical_id = row.xpath("./td[position()=1]//text()").text.gsub(%r|[\[\]]|, "").to_i
+          types = {2 => :'單讀音字', 3 => :'破音字', 4 => :'異讀字', 5 => :'異讀破音字'}
           types.collect do |index, type|
-            row.xpath(".//td[position()=#{index}]/a").collect do |link|
+            row.xpath("./td[position()=#{index}]/a").collect do |link|
               {:radical_id => radical_id, :text => link.text, :type => type}
             end
           end
