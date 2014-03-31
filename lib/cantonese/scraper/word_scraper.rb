@@ -33,7 +33,7 @@ module Cantonese
         frequency   = doc.search("//*[@class = 't' and .='頻序 / 頻次:']/following-sibling::td[1]").text rescue nil
         combination = doc.search("//text()[.='配搭點:']/following-sibling::a").collect{|a| a.text}
 
-        sounds      = doc.search('//form/table[1]/tr[position()>1]').collect do |row|
+        syllable    = doc.search('//form/table[1]/tr[position()>1]').collect do |row|
           sound = row.search("./td[1]")
           initial = sound.xpath("./*[@color='red']").text rescue nil
           final = sound.xpath("./*[@color='green']").text rescue nil
@@ -52,11 +52,9 @@ module Cantonese
           end
 
           {
-            :syllable => {
-              :initial => initial, 
-              :final => final, 
-              :tone => tone
-            },
+            :initial => initial, 
+            :final => final, 
+            :tone => tone,
             :pronunciation => pronunciation,
             :examples => example_text,
             :note => note_text
@@ -71,7 +69,7 @@ module Cantonese
           :big5 => big5,
           :chanjie => chanjie,
           :frequency => frequency,
-          :sounds => sounds,
+          :syllable => syllable,
           :combination => combination
         }
       end
