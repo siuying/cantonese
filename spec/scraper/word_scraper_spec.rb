@@ -64,5 +64,12 @@ describe Cantonese::Scraper::WordScraper do
       expect(word[:syllable][1][:examples]).to be_include("可歌可泣")
     end
 
+    it "should parse 鏕 properly" do
+      word = subject.crawl("鏕")
+      expect(word[:syllable]).to be_a(Array)
+      expect(word[:syllable][0][:full]).to eq("ou1")
+      expect(word[:syllable][1][:full]).to eq("luk6")
+    end
+
   end
 end
