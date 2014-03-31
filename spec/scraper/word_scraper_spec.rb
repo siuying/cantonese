@@ -34,7 +34,6 @@ describe Cantonese::Scraper::WordScraper do
     it "should return detail of a word with multiple sounds" do
       word = subject.crawl("可")
       expect(word).to be_a(Hash)
-
       expect(word[:text]).to eq("可")
 
       expect(word[:stroke]).to eq(5)

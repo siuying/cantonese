@@ -13,10 +13,10 @@ module Cantonese
 
         # fetch and get the page in UTF8
         html = open(url).read
-        html = html.encode('UTF-8', 'Big5', :invalid => :replace, :undef => :replace, :replace => '?')
-        html = TidyFFI::Tidy.clean(html.gsub(/\0/, ''))
-
-        doc  = Nokogiri::HTML(html, nil, 'UTF-8')        
+        html = html.encode('UTF-8', 'Big5', :invalid => :replace, :undef => :replace, :replace => '')
+        html = TidyFFI::Tidy.clean(html.gsub(/\0/, ''), :input_encoding => "utf8", :output_encoding => "utf8", :wrap => 0)
+        
+        doc  = Nokogiri::HTML(html, nil, 'UTF-8')
         word = doc.search(".w").first.text
 
         radical_id  = doc.search("//*[@class = 't' and .='部首:']/following-sibling::td[1]").text.strip.tr('[] ', '').to_i rescue nil
@@ -25,7 +25,7 @@ module Cantonese
         big5        = doc.search("//*[@class = 't' and .='大五碼:']/following-sibling::td[1]").text rescue nil
         chanjie     = doc.search("//*[@class = 't' and .='倉頡碼:']/following-sibling::td[1]").text rescue nil
         rank_and_frequency   = doc.search("//*[@class = 't' and .='頻序 / 頻次:']/following-sibling::td[1]").text rescue nil
-        combination = doc.search("//text()[.='配搭點:']/following-sibling::a").collect{|a| a.text}
+        combination = doc.search("//*[text()[contains(., '配搭點:')]]").search("a").select{|a| a["href"] =~ /^search/}.collect {|a| a.text.strip }
         rank, frequency = rank_and_frequency.split("/").collect{|word| word.strip.to_i }
 
         syllable    = doc.search('//form/table[1]/tr[position()>1]').collect do |row|
@@ -42,7 +42,7 @@ module Cantonese
             example_text = nil
             note_text = note.text
           else
-            example_text = example_or_note.text.gsub(%r{\[[0-9]+\.\.\]}, ', ').split(", ")
+            example_text = example_or_note.text.gsub(%r{\[[0-9]+\.\.\]}, ', ').split(", ").collect{|e| e.strip }
             note_text = nil
           end
 
