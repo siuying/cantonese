@@ -1,6 +1,6 @@
 # Cantonese
 
-Set of scraper and processor Cantonese.
+Set of scraper and processor to fetch Cantonese data.
 
 - Sounds - Extract Cantonese sounds data from [粵話審音配詞字庫](http://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/) (Chinese Character Database)
 - Chinese Radical from [moedict.tw](https://www.moedict.tw/@)
