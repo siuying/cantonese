@@ -1,0 +1,92 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://raw.githubusercontent.com/audreyt/moedict-webkit/master/c/@.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 31 Mar 2014 05:48:11 GMT
+      Server:
+      - Apache
+      Content-Security-Policy:
+      - default-src 'none'
+      Access-Control-Allow-Origin:
+      - https://render.github.com
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Content-Type:
+      - text/plain; charset=utf-8
+      Cache-Control:
+      - max-age=300
+      Content-Length:
+      - '1341'
+      Accept-Ranges:
+      - bytes
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-ty68-TYO
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      Expires:
+      - Mon, 31 Mar 2014 05:53:11 GMT
+      Source-Age:
+      - '0'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W1tdCixbIuS4gCIsIuS4qCIsIuS4tiIsIuS4vyIsIuS5mSIsIuS6hSJdCixb
+        IuS6jCIsIuS6oCIsIuS6uiIsIuWEvyIsIuWFpSIsIuWFqyIsIuWGgiIsIuWG
+        liIsIuWGqyIsIuWHoCIsIuWHtSIsIuWIgCIsIuWKmyIsIuWLuSIsIuWMlSIs
+        IuWMmiIsIuWMuCIsIuWNgSIsIuWNnCIsIuWNqSIsIuWOgiIsIuWOtiIsIuWP
+        iCJdCixbIuWPoyIsIuWblyIsIuWcnyIsIuWjqyIsIuWkgiIsIuWkiiIsIuWk
+        lSIsIuWkpyIsIuWlsyIsIuWtkCIsIuWugCIsIuWvuCIsIuWwjyIsIuWwoiIs
+        IuWwuCIsIuWxriIsIuWxsSIsIuW3myIsIuW3pSIsIuW3sSIsIuW3viIsIuW5
+        siIsIuW5uiIsIuW5vyIsIuW7tCIsIuW7viIsIuW8iyIsIuW8kyIsIuW9kCIs
+        IuW9oSIsIuW9syJdCixbIuW/gyIsIuaIiCIsIuaItiIsIuaJiyIsIuaUryIs
+        IuaUtCIsIuaWhyIsIuaWlyIsIuaWpCIsIuaWuSIsIuaXoCIsIuaXpSIsIuab
+        sCIsIuaciCIsIuacqCIsIuasoCIsIuatoiIsIuatuSIsIuausyIsIuaviyIs
+        IuavlCIsIuavmyIsIuawjyIsIuawlCIsIuawtCIsIueBqyIsIueIqiIsIueI
+        tiIsIueIuyIsIueIvyIsIueJhyIsIueJmSIsIueJmyIsIueKrCJdCixbIueO
+        hCIsIueOiSIsIueTnCIsIueTpiIsIueUmCIsIueUnyIsIueUqCIsIueUsCIs
+        IueWiyIsIueWkiIsIueZtiIsIueZvSIsIueariIsIueavyIsIuebriIsIuef
+        myIsIuefoiIsIuefsyIsIuekuiIsIuemuCIsIuemviIsIueptCIsIueriyJd
+        CixbIueruSIsIuexsyIsIuezuCIsIue8tiIsIue9kSIsIue+iiIsIue+vSIs
+        IuiAgSIsIuiAjCIsIuiAkiIsIuiAsyIsIuiBvyIsIuiCiSIsIuiHoyIsIuiH
+        qiIsIuiHsyIsIuiHvCIsIuiIjCIsIuiImyIsIuiInyIsIuiJriIsIuiJsiIs
+        IuiJuCIsIuiZjSIsIuiZqyIsIuihgCIsIuihjCIsIuihoyIsIuilviJdCixb
+        IuimiyIsIuinkiIsIuiogCIsIuiwtyIsIuixhiIsIuixlSIsIuixuCIsIuiy
+        nSIsIui1pCIsIui1sCIsIui2syIsIui6qyIsIui7iiIsIui+myIsIui+sCIs
+        Iui+tSIsIumCkSIsIumFiSIsIumHhiIsIumHjCJdCixbIumHkSIsIumVtyIs
+        IumWgCIsIumYnCIsIumatiIsIumauSIsIumbqCIsIumdkSIsIumdniJdCixb
+        IumdoiIsIumdqSIsIumfiyIsIumfrSIsIumfsyIsIumggSIsIumiqCIsIumj
+        myIsIumjnyIsIummliIsIummmSJdCixbIummrCIsIumqqCIsIumrmCIsIumr
+        nyIsIumspSIsIumsryIsIumssiIsIumsvCJdCixbIumtmiIsIumzpSIsIum5
+        tSIsIum5vyIsIum6pSIsIum6uyJdCixbIum7gyIsIum7jSIsIum7kSIsIum7
+        uSJdCixbIum7vSIsIum8jiIsIum8kyIsIum8oCJdCixbIum8uyIsIum9iiJd
+        CixbIum9kiJdCixbIum+jSIsIum+nCJdCixbIum+oCJdCl0K
+    http_version: 
+  recorded_at: Mon, 31 Mar 2014 05:48:30 GMT
+recorded_with: VCR 2.8.0
