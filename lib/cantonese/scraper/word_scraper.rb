@@ -30,14 +30,15 @@ module Cantonese
         classified  = doc.search("//*[@class = 't' and .='字音分類:']/following-sibling::td[1]").text rescue nil
         big5        = doc.search("//*[@class = 't' and .='大五碼:']/following-sibling::td[1]").text rescue nil
         chanjie     = doc.search("//*[@class = 't' and .='倉頡碼:']/following-sibling::td[1]").text rescue nil
-        frequency   = doc.search("//*[@class = 't' and .='頻序 / 頻次:']/following-sibling::td[1]").text rescue nil
+        rank_and_frequency   = doc.search("//*[@class = 't' and .='頻序 / 頻次:']/following-sibling::td[1]").text rescue nil
         combination = doc.search("//text()[.='配搭點:']/following-sibling::a").collect{|a| a.text}
+        rank, frequency = rank_and_frequency.split("/").collect{|word| word.strip.to_i }
 
         syllable    = doc.search('//form/table[1]/tr[position()>1]').collect do |row|
           sound = row.search("./td[1]")
-          initial = sound.xpath("./*[@color='red']").text rescue nil
-          final = sound.xpath("./*[@color='green']").text rescue nil
-          tone = sound.xpath("./*[@color='blue']").text rescue nil
+          initial = sound.xpath("./*[@color='red']").text rescue ""
+          final = sound.xpath("./*[@color='green']").text rescue ""
+          tone = sound.xpath("./*[@color='blue']").text rescue ""
           sound_text = sound.text
           pronunciation = "http://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/sound/#{sound_text}.wav"
 
@@ -52,6 +53,7 @@ module Cantonese
           end
 
           {
+            :full => "#{initial}#{final}#{tone}",
             :initial => initial, 
             :final => final, 
             :tone => tone,
@@ -68,6 +70,7 @@ module Cantonese
           :classified => classified,
           :big5 => big5,
           :chanjie => chanjie,
+          :rank => rank,
           :frequency => frequency,
           :syllable => syllable,
           :combination => combination

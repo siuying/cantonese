@@ -15,11 +15,14 @@ describe Cantonese::Scraper::WordScraper do
 
       expect(word[:big5]).to eq("A440")
       expect(word[:chanjie]).to eq("一")
-      expect(word[:frequency]).to eq("2 / 166396")
+
+      expect(word[:rank]).to eq(2)
+      expect(word[:frequency]).to eq(166396)
       expect(word[:combination]).to be_a(Array)
       expect(word[:combination]).to be_include("山")
 
       expect(word[:syllable]).to be_a(Array)
+      expect(word[:syllable][0][:full]).to eq("jat1")
       expect(word[:syllable][0][:initial]).to eq("j")
       expect(word[:syllable][0][:final]).to eq("at")
       expect(word[:syllable][0][:tone]).to eq("1")
@@ -40,17 +43,20 @@ describe Cantonese::Scraper::WordScraper do
 
       expect(word[:big5]).to eq("A569")
       expect(word[:chanjie]).to eq("一弓口")
-      expect(word[:frequency]).to eq("36 / 40754")
+      expect(word[:rank]).to eq(36)
+      expect(word[:frequency]).to eq(40754)
       expect(word[:combination]).to be_a(Array)
       expect(word[:combination]).to be_include("不")
 
       expect(word[:syllable]).to be_a(Array)
+      expect(word[:syllable][0][:full]).to eq("hak1")
       expect(word[:syllable][0][:initial]).to eq("h")
       expect(word[:syllable][0][:final]).to eq("ak")
       expect(word[:syllable][0][:tone]).to eq("1")
       expect(word[:syllable][0][:examples]).to be_a(Array)
       expect(word[:syllable][0][:examples]).to be_include("可汗")
 
+      expect(word[:syllable][1][:full]).to eq("ho2")
       expect(word[:syllable][1][:initial]).to eq("h")
       expect(word[:syllable][1][:final]).to eq("o")
       expect(word[:syllable][1][:tone]).to eq("2")
