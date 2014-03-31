@@ -8,9 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Cantonese::VERSION
   spec.authors       = ["Francis Chong"]
   spec.email         = ["francis@ignition.hk"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{Set of scraper and processor to fetch Cantonese data.}
+  spec.homepage      = "https://github.com/siuying/cantonese"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
