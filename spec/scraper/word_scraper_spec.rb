@@ -70,5 +70,25 @@ describe Cantonese::Scraper::WordScraper do
       expect(word[:syllable][1][:full]).to eq("luk6")
     end
 
+    it "should parse 滕 properly" do
+      word = subject.crawl("滕")
+      expect(word[:text]).to eq("滕")
+
+      expect(word[:stroke]).to eq(15)
+      expect(word[:radical_id]).to eq(85)
+      expect(word[:classified]).to eq("單讀音字")
+
+      expect(word[:big5]).to eq("BCF0")
+      expect(word[:chanjie]).to eq("月火手水")
+      expect(word[:rank]).to eq(4410)
+      expect(word[:frequency]).to eq(23)
+      expect(word[:combination]).to be_a(Array)
+
+      expect(word[:syllable]).to be_a(Array)
+      expect(word[:syllable][0][:full]).to eq("tang4")
+      expect(word[:syllable][0][:note]).to eq("(1)姓氏 (2)周代國名")
+    end
+
+
   end
 end

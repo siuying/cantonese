@@ -14,7 +14,7 @@ module Cantonese
         # fetch and get the page in UTF8
         html = open(url).read
         html = html.encode('UTF-8', 'Big5', :invalid => :replace, :undef => :replace, :replace => '')
-        html = TidyFFI::Tidy.clean(html.gsub(/\0/, ''), :input_encoding => "utf8", :output_encoding => "utf8", :wrap => 0)
+        html = TidyFFI::Tidy.clean(html.gsub(/\0/, ''), :input_encoding => "utf8", :output_encoding => "utf8", :wrap => 0, :force_output => true)
         
         doc  = Nokogiri::HTML(html, nil, 'UTF-8')
         word = doc.search(".w").first.text
