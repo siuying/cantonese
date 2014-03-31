@@ -1,6 +1,6 @@
 # Cantonese
 
-TODO: Write a gem description
+A scraper and processor to extract Cantonese data from [粵話審音配詞字庫](http://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/) (Chinese Character Database).
 
 ## Installation
 

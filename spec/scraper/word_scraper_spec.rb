@@ -20,9 +20,9 @@ describe Cantonese::Scraper::WordScraper do
       expect(word[:combination]).to be_include("山")
 
       expect(word[:sounds]).to be_a(Array)
-      expect(word[:sounds][0][:initial]).to eq("j")
-      expect(word[:sounds][0][:final]).to eq("at")
-      expect(word[:sounds][0][:tone]).to eq("1")
+      expect(word[:sounds][0][:syllable][:initial]).to eq("j")
+      expect(word[:sounds][0][:syllable][:final]).to eq("at")
+      expect(word[:sounds][0][:syllable][:tone]).to eq("1")
 
       expect(word[:sounds][0][:examples]).to be_a(Array)
       expect(word[:sounds][0][:examples]).to be_include("一視同仁")
@@ -45,15 +45,15 @@ describe Cantonese::Scraper::WordScraper do
       expect(word[:combination]).to be_include("不")
 
       expect(word[:sounds]).to be_a(Array)
-      expect(word[:sounds][0][:initial]).to eq("h")
-      expect(word[:sounds][0][:final]).to eq("ak")
-      expect(word[:sounds][0][:tone]).to eq("1")
+      expect(word[:sounds][0][:syllable][:initial]).to eq("h")
+      expect(word[:sounds][0][:syllable][:final]).to eq("ak")
+      expect(word[:sounds][0][:syllable][:tone]).to eq("1")
       expect(word[:sounds][0][:examples]).to be_a(Array)
       expect(word[:sounds][0][:examples]).to be_include("可汗")
 
-      expect(word[:sounds][1][:initial]).to eq("h")
-      expect(word[:sounds][1][:final]).to eq("o")
-      expect(word[:sounds][1][:tone]).to eq("2")
+      expect(word[:sounds][1][:syllable][:initial]).to eq("h")
+      expect(word[:sounds][1][:syllable][:final]).to eq("o")
+      expect(word[:sounds][1][:syllable][:tone]).to eq("2")
       expect(word[:sounds][1][:examples]).to be_a(Array)
       expect(word[:sounds][1][:examples]).to be_include("可歌可泣")
     end

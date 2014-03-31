@@ -52,9 +52,11 @@ module Cantonese
           end
 
           {
-            :initial => initial, 
-            :final => final, 
-            :tone => tone,
+            :syllable => {
+              :initial => initial, 
+              :final => final, 
+              :tone => tone
+            },
             :pronunciation => pronunciation,
             :examples => example_text,
             :note => note_text
