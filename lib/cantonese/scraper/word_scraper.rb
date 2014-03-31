@@ -46,8 +46,17 @@ module Cantonese
             note_text = nil
           end
 
+          full = "#{initial}#{final}#{tone}"
+
+          # patch to fix error on database
+          if full == "6bwik1"
+            full = "kwik1"
+            initial = "k"
+            pronunciation = "http://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/sound/#{full}.wav"
+          end
+
           {
-            :full => "#{initial}#{final}#{tone}",
+            :full => full,
             :initial => initial, 
             :final => final, 
             :tone => tone,
