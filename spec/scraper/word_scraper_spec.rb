@@ -90,5 +90,27 @@ describe Cantonese::Scraper::WordScraper do
     end
 
 
+    it "should parse 不 properly" do
+      word = subject.crawl("不")
+      expect(word[:text]).to eq("不")
+
+      expect(word[:stroke]).to eq(4)
+      expect(word[:radical_id]).to eq(1)
+      expect(word[:classified]).to eq("破音字")
+
+      expect(word[:big5]).to eq("A4A3")
+      expect(word[:chanjie]).to eq("一火")
+      expect(word[:rank]).to eq(5)
+      expect(word[:frequency]).to eq(107418)
+      expect(word[:combination]).to be_a(Array)
+      expect(word[:combination]).to be_include("一")
+      expect(word[:combination]).to be_include("躞")
+      expect(word[:combination]).to_not be_include("筆")
+
+      expect(word[:syllable]).to be_a(Array)
+      expect(word[:syllable][0][:full]).to eq("bat1")
+      expect(word[:syllable][1][:full]).to eq("fau2")
+      expect(word[:syllable][1][:note]).to eq("同「否」字")
+    end
   end
 end

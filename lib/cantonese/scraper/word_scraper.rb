@@ -25,7 +25,7 @@ module Cantonese
         big5        = doc.search("//*[@class = 't' and .='大五碼:']/following-sibling::td[1]").text rescue nil
         chanjie     = doc.search("//*[@class = 't' and .='倉頡碼:']/following-sibling::td[1]").text rescue nil
         rank_and_frequency   = doc.search("//*[@class = 't' and .='頻序 / 頻次:']/following-sibling::td[1]").text rescue nil
-        combination = doc.search("//*[text()[contains(., '配搭點:')]]").search("a").select{|a| a["href"] =~ /^search/}.collect {|a| a.text.strip }
+        combination = doc.search("//table/following-sibling::text()[contains(.,'配搭點')]/following-sibling::a").select{|a| a["href"] =~ /^search/}.collect {|a| a.text.strip }
         rank, frequency = rank_and_frequency.split("/").collect{|word| word.strip.to_i }
 
         syllable    = doc.search('//form/table[1]/tr[position()>1]').collect do |row|
